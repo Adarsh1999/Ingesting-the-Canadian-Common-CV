@@ -2,6 +2,7 @@
 # Create your models here.
 
 from django.db import models
+from DisplayData.document import QuestionIndex
 
 # Create your models here.
 
@@ -25,6 +26,26 @@ class QuestionModel(models.Model):
 
     class Meta:
         db_table = "question_table"
+
+    def indexing(self, **kwargs):
+        obj = QuestionIndex(
+            meta={'id': self.id},
+            id=self.id,
+            post_type_id=self.post_type_id,
+            CreationDate = self.CreationDate,
+            Body = self.Body,
+            ViewCount = self.ViewCount,
+
+            OwnerUserId =self.OwnerUserId,
+            LastActivityDate = self.LastActivityDate,
+            Title = self.Title,
+            Tags = self.Tags,
+            AnswerCount = self.AnswerCount,
+            CommentCount = self.CommentCount,
+
+        )
+        obj.save(**kwargs)
+        return obj.to_dict(include_meta=True)
 
 
 class AnswerModel(models.Model):
