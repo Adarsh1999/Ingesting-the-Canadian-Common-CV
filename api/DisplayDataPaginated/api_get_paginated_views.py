@@ -4,7 +4,14 @@ from rest_framework import status
 from DisplayData.DisplayAllFacade import DisplayAllQuestionFacade
 from DisplayData.models import QuestionModel
 from django.core.paginator import Paginator
+'''
+This is GET request api for the display of the data according to the order by ViewCount or  the score but API is
+for paginated content which is 10 questions for a page
 
+Endpoint for viewcount - http://127.0.0.1:8000/pages/<page-no.>/?q=ViewCount
+Endpoint for viewcount - http://127.0.0.1:8000/pages/<page-no>/?q=Score
+
+'''
 orderedViewsObject = QuestionModel.objects.order_by('-ViewCount')
 p = Paginator(orderedViewsObject, 10)
 class SortBy(APIView):

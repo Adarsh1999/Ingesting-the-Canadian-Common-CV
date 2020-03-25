@@ -1,7 +1,8 @@
 
-
 from DisplayData.models import QuestionModel
-
+'''
+This class is generally used for the GET request and send the json data to the frontend 
+'''
 
 class DisplayAllQuestionFacade:
     def getData(questionID):

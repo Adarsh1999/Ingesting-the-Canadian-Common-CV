@@ -20,4 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('data/', include('api.DisplayData.api_get_raw_urls')),
     path('pages/', include('api.DisplayDataPaginated.api_get_paginated_urls')),
+    path('search/', include('api.SearchData.api_search_data_urls')),
+    path('answers/', include('api.ViewAnswers.api_view_answers_urls')),
+    path('smart_search/',include('api.SmartSearch.api_smart_search_urls'))
 ]

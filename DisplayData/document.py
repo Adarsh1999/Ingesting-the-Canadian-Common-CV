@@ -2,18 +2,20 @@ from datetime import datetime
 from elasticsearch_dsl import Document, Date, Nested,token_filter, Boolean, \
     analyzer, InnerDoc, Completion, Keyword, Text,connections,Integer,Short,Float,Double,tokenizer, Long, analysis
 
-
-from DisplayData.models import QuestionModel
-from DisplayData.models import AnswerModel
+'''
+This is the file for making of the index of the question model for the elasticsearch and use of NLP analyzers on it
+'''
 
 
 data_analyzer= analyzer(
     'data_analyzer',
     tokenizer=tokenizer(
         'whitespace',
-        'edge_ngram',
+        'standard'
+        'letter'
+        'ngram',
         min_gram=1,
-        max_gram=10,
+        max_gram=100,
     ),
     filter=[
         'lowercase',
@@ -37,7 +39,7 @@ class QuestionIndex(Document):
     CommentCount =Integer()
 
     class Index:
-        name="questions_index"
+        name="questions"
         settings = {
             'number_of_shards': 1,
             'number_of_replicas': 0

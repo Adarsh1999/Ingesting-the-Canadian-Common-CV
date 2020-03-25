@@ -3,7 +3,15 @@
 
 from django.db import models
 from DisplayData.document import QuestionIndex
+'''
+This file contains the structure of the database.
+Here I considered 2 different model according to the dataset 1. Question model 2. Answer model
+'''
 
+'''
+As answer model depends on the question model on the parent_id so it is a foreign key and also I have create Question
+indexing for the implementation of the elastic search and indexing of the question model in the elastic server
+'''
 # Create your models here.
 
 # to ask that user id and simple id is char or have to be primary key
@@ -27,10 +35,10 @@ class QuestionModel(models.Model):
     class Meta:
         db_table = "question_table"
 
-    def indexing(self, **kwargs):
+    def indexing(self):
         obj = QuestionIndex(
-            meta={'id': self.id},
-            id=self.id,
+            meta={'id': self.Id},
+            id=self.Id,
             post_type_id=self.post_type_id,
             CreationDate = self.CreationDate,
             Body = self.Body,
@@ -44,7 +52,7 @@ class QuestionModel(models.Model):
             CommentCount = self.CommentCount,
 
         )
-        obj.save(**kwargs)
+        obj.save()
         return obj.to_dict(include_meta=True)
 
 

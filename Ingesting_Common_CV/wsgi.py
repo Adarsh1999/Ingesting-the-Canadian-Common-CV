@@ -11,6 +11,11 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Ingesting_Common_CV.settings')
 
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Ingesting_Common_CV.settings')
+import django
+django.setup()
+
+from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
+

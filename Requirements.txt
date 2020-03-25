@@ -1,6 +1,7 @@
-django
-django-rest-framework
-lxml
-peewee
+Django
 elasticsearch
 elasticsearch-dsl
+peewee
+lxml
+django-cors-headers
+djangorestframework

@@ -4,6 +4,15 @@ from rest_framework import status
 from DisplayData.DisplayAllFacade import DisplayAllQuestionFacade
 from DisplayData.models import QuestionModel
 
+
+'''
+This is GET request api for the display of the data according to the order by ViewCount or  the score but API is
+not for paginated content
+
+Endpoint for viewcount - http://127.0.0.1:5000/?q=Viewcount
+Endpoint for viewcount - http://127.0.0.1:5000/?q=Score
+
+'''
 class SortBy(APIView):
     def get(self,request):
         q = request.GET.get('q')

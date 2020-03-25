@@ -1,37 +1,10 @@
 # Ingesting-the-Canadian-Common-CV
-# Installation
-### git clone the repo and come to the directory of the repo in your terminal
-## Virtual Environment
-```
-sudo apt install python3-pip 
-```
-```
-pip3 install --upgrade virtualenv
-```
-```
-sudo apt install virtualenv
-```
-```
-virtualenv -p python3 venv 
-```
-# Install Requirements
-```
-source venv/bin/activate
-```
-```
-pip install -r requirements.txt
-```
+Selection Test for GSOC 2020 @Canadian Centre for Computational Genomics
 
-# For running the django server
+## Running the Project
 ```
-python manage.py makemigrations
-```
-```
-python manage.py migrate
+docker build -t ingesting_common_cv .
 ```
 ```
-python manage.py runserver
+ docker-compose up
 ```
-
-
-
