@@ -29,7 +29,7 @@ pip3 install --upgrade virtualenv
 ```
 sudo apt install virtualenv
 ```
-* Also download Elastic Search from the official website for the setup according to your os*
+*Also download Elastic Search from the official website for the setup according to your os*
 ```
 virtualenv -p python3 venv 
 ```
