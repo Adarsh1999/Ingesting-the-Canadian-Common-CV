@@ -90,7 +90,7 @@ GET http://127.0.0.1:8000/pages/`page-no`/?q=view-count
 6. Display Answers endpoint
 The Display answers endpoint is a very sophisticated endpoint having the following features:
 - Display Answers based on question id having one or more answers.
->GET http://127.0.0.1:8000/answers/id/?id=11192
+>GET http://127.0.0.1:8000/answers/id/?id=<answer-id>
 - Display Answers based on question id having no answers.
->GET http://127.0.0.1:8000/answers/id/?id=11485
+>GET http://127.0.0.1:8000/answers/id/?id=<answer-id>
 
