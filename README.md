@@ -34,7 +34,7 @@ sudo apt install virtualenv
 ```
 virtualenv -p python3 venv 
 ```
-##### *Also download Elastic Search from the official website for the setup according to your os*
+##### *Setting up Elastic Search*
 ```
 sudo apt update
 sudo apt install apt-transport-https
@@ -71,17 +71,22 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-
-## Api endpoints 
-
-```
-GET http://127.0.0.1:8000/order_by_default
-GET http://127.0.0.1:8000/data/?q=Viewcount
-GET http://127.0.0.1:8000/data/?q=Score
-GET http://127.0.0.1:8000/pages/<page-no.>/?q=ViewCount
-GET http://127.0.0.1:8000/pages/<page-no>/?q=Score
-GET http://127.0.0.1:8000/search/?q=<string-to-search>
-GET http://127.0.0.1:9200/smart_search/questions/_search/?q=<string-to-search>
-
-```
+ 1. Endpoint to return posts in `chronological order`
+GET http://127.0.0.1:8000/default/
+2. Endpoint to return posts in `order by viewcount`
+GET http://127.0.0.1:8000/data/?q=view-count
+3.  Endpoint to return posts in `order by score`
+GET http://127.0.0.1:8000/data/?q=score
+4. Endpoint to return posts in **paginated** `order by viewcount`
+GET http://127.0.0.1:8000/pages/`page-no`/?q=view-count
+> *Dont forget to replace `page-no` by page-number example 1,2,3...
+5. Endpoint to return posts in **paginated** `order by score`
+GET http://127.0.0.1:8000/pages/`page-no`/?q=view-count
+> *Dont forget to replace `page-no` by page-number example 1,2,3...
+6. Display Answers endpoint
+The Display answers endpoint is a very sophisticated endpoint having the following features:
+- Display Answers based on question id having one or more answers.
+>GET http://127.0.0.1:8000/answers/id/?id=11192
+- Display Answers based on question id having no answers.
+>GET http://127.0.0.1:8000/answers/id/?id=11485
 
