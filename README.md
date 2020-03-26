@@ -45,6 +45,9 @@ sudo apt-get update && sudo apt-get install elasticsearch
 sudo systemctl enable elasticsearch.service
 sudo systemctl start elasticsearch.service
 ```
+##### *For setting up Elastic Search in Windows*
+Download msi package from https://www.elastic.co/guide/en/elasticsearch/reference/current/windows.html
+
 
 ## Install Requirements
 ```
