@@ -1,6 +1,8 @@
 # Ingesting-the-Canadian-Common-CV
 # Installation
-* #### git clone the repo and come to the directory of the repo in your terminal.
+```
+git clone https://github.com/Adarsh1999/Ingesting-the-Canadian-Common-CV.git
+```
 * #### There are 2 methods to run the project 1. docker file and another manual setup.
 
 # Method 1: For Running project From Docker File
@@ -33,6 +35,16 @@ sudo apt install virtualenv
 virtualenv -p python3 venv 
 ```
 ##### *Also download Elastic Search from the official website for the setup according to your os*
+```
+sudo apt update
+sudo apt install apt-transport-https
+sudo apt install openjdk-8-jdk
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+sudo sh -c 'echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" > /etc/apt/sources.list.d/elastic-7.x.list'
+sudo apt-get update && sudo apt-get install elasticsearch
+sudo systemctl enable elasticsearch.service
+sudo systemctl start elasticsearch.service
+```
 
 ## Install Requirements
 ```
