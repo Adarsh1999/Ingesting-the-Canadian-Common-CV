@@ -49,7 +49,7 @@ sudo systemctl start elasticsearch.service
 Download msi package from https://www.elastic.co/guide/en/elasticsearch/reference/current/windows.html
 
 #### For checking Elastic search is working
-Go to browser and paste this ```localhost:9200/'''
+Go to browser and paste this ` localhost:9200/ `
 ## Install Requirements
 ```
 source venv/bin/activate
