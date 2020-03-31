@@ -34,17 +34,7 @@ sudo apt install virtualenv
 ```
 virtualenv -p python3 venv 
 ```
-##### *Setting up Elastic Search*
-```
-sudo apt update
-sudo apt install apt-transport-https
-sudo apt install openjdk-8-jdk
-wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-sudo sh -c 'echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" > /etc/apt/sources.list.d/elastic-7.x.list'
-sudo apt-get update && sudo apt-get install elasticsearch
-sudo systemctl enable elasticsearch.service
-sudo systemctl start elasticsearch.service
-```
+
 ##### *For setting up Elastic Search in Windows*
 Download msi package from https://www.elastic.co/guide/en/elasticsearch/reference/current/windows.html
 
@@ -75,22 +65,4 @@ python manage.py migrate
 python manage.py runserver
 ```
 
- 1. Endpoint to return posts in `chronological order`
-GET http://127.0.0.1:8000/default/
-2. Endpoint to return posts in `order by viewcount`
-GET http://127.0.0.1:8000/data/?q=view-count
-3.  Endpoint to return posts in `order by score`
-GET http://127.0.0.1:8000/data/?q=score
-4. Endpoint to return posts in **paginated** `order by viewcount`
-GET http://127.0.0.1:8000/pages/`page-no`/?q=view-count
-> *Dont forget to replace `page-no` by page-number example 1,2,3...
-5. Endpoint to return posts in **paginated** `order by score`
-GET http://127.0.0.1:8000/pages/`page-no`/?q=view-count
-> *Dont forget to replace `page-no` by page-number example 1,2,3...
-6. Display Answers endpoint
-The Display answers endpoint is a very sophisticated endpoint having the following features:
-- Display Answers based on question id having one or more answers.
->GET http://127.0.0.1:8000/answers/id/?id=<answer-id>
-- Display Answers based on question id having no answers.
->GET http://127.0.0.1:8000/answers/id/?id=<answer-id>
 
